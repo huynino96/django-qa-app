@@ -59,61 +59,40 @@
       <!-- Questions List View -->
 
       <div class="container">
+          {% for question in questions %}
           <div class="card">
               <div class="card-body">
-                  <h4 class="card-title">Question</h4>
-                  <p class="card-text">Question Detail</p>
+                  <h4 class="card-title"><a href="/detail/{{ question.id}}">{{ question.title }}</a></h4>
+                  <p class="card-text">{{question.detail}}</p>
                   <p>
-                      <a href="#" class="ml-3">John Doe</a>
+                      <a href="#" class="ml-3">{{question.user.username}}</a>
                       <a href="#" class="ml-3">3 Answer</a>
                       <a href="#" class="ml-3">10 Comments</a>
                   </p>
               </div>
           </div>
+          {% endfor %}
 
-          <div class="card">
-            <div class="card-body">
-                <h4 class="card-title">Question</h4>
-                <p class="card-text">Question Detail</p>
-                <p>
-                    <a href="#" class="ml-3">John Doe</a>
-                    <a href="#" class="ml-3">3 Answer</a>
-                    <a href="#" class="ml-3">10 Comments</a>
-                </p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-body">
-                <h4 class="card-title">Question</h4>
-                <p class="card-text">Question Detail</p>
-                <p>
-                    <a href="#" class="ml-3">John Doe</a>
-                    <a href="#" class="ml-3">3 Answer</a>
-                    <a href="#" class="ml-3">10 Comments</a>
-                </p>
-            </div>
-        </div>
-      </div>
-
+          
       <!-- Panigtions -->
-
-      <nav aria-label="Page navigation example" class="myy-3 container">
+      {% if questions.has_other_pages %}
+      <nav class="my-3 container">
         <ul class="pagination">
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-            </a>
-          </li>
-          <li class="page-item active"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-            </a>
-          </li>
+            {% if questions.has_previous %}
+          <li class="page-item"><a class="page-link" href="?page={{questions.previous_page_number}}">Previous</a></li>
+          {% endif %}
+          {% for i in questions.paginator.page_range %}
+          {% if questions.number == i %}
+          <li class="page-item active"><a class="page-link" href="#">{{i}}</a></li>
+          {% else %}
+          <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+          {% endif %}
+          {% endfor %}
+          {% if questions.has_next %}
+          <li class="page-item"><a class="page-link" href="?page={{questions.next_page_number}}">Next</a></li>
+          {% endif %}
         </ul>
       </nav>
+    {% endif %}
   </body>
 </html>
