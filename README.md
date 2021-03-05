@@ -4,3 +4,5 @@
 2. use "python3 -m venv <env-name>" to create virtual environment
 3. Execute "source <env-name>/bin/activate" to activate virtual environment
 4. Run "python3 manage.py migrate" to migrate DB
+5. Run "python3 manage.py createsuperuser" to create admin 
+6. Run "python3 manage.py startapp main"
