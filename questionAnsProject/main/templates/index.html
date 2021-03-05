@@ -10,43 +10,110 @@
     <title>Home Page</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link disabled"
-                href="#"
-                tabindex="-1"
-                aria-disabled="true"
-                >Disabled</a
-              >
-            </li>
-          </ul>
+    
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Questions</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Tags</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Ask</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Profile</a>
+              </li>
+            </ul>
+        
+        </div>
+      </nav>
+
+      <!-- Search Bar -->
+
+      <div class="container py-5">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Search"/>
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+          </div>
+      </div>
+
+      <!-- Questions List View -->
+
+      <div class="container">
+          <div class="card">
+              <div class="card-body">
+                  <h4 class="card-title">Question</h4>
+                  <p class="card-text">Question Detail</p>
+                  <p>
+                      <a href="#" class="ml-3">John Doe</a>
+                      <a href="#" class="ml-3">3 Answer</a>
+                      <a href="#" class="ml-3">10 Comments</a>
+                  </p>
+              </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Question</h4>
+                <p class="card-text">Question Detail</p>
+                <p>
+                    <a href="#" class="ml-3">John Doe</a>
+                    <a href="#" class="ml-3">3 Answer</a>
+                    <a href="#" class="ml-3">10 Comments</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Question</h4>
+                <p class="card-text">Question Detail</p>
+                <p>
+                    <a href="#" class="ml-3">John Doe</a>
+                    <a href="#" class="ml-3">3 Answer</a>
+                    <a href="#" class="ml-3">10 Comments</a>
+                </p>
+            </div>
         </div>
       </div>
-    </nav>
+
+      <!-- Panigtions -->
+
+      <nav aria-label="Page navigation example" class="myy-3 container">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="page-item active"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
   </body>
 </html>
